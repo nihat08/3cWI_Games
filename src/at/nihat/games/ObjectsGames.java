@@ -2,7 +2,7 @@ package at.nihat.games;
 
 import org.newdawn.slick.*;
 
-public class Rectangle extends BasicGame {
+public class ObjectsGames extends BasicGame {
     private float speed;
     private int scrWidth = 800, scrHeight = 600;
 
@@ -18,7 +18,7 @@ public class Rectangle extends BasicGame {
     private float crclCollX;
     private float crclCollY;
 
-    public Rectangle(String title) {
+    public ObjectsGames(String title) {
         super(title);
     }
 
@@ -91,7 +91,7 @@ public class Rectangle extends BasicGame {
     }
     public static void main(String[] argv) {
         try {
-            AppGameContainer container = new AppGameContainer(new Rectangle("Rectangle"));
+            AppGameContainer container = new AppGameContainer(new ObjectsGames("Rectangle"));
             container.setDisplayMode(800,600,false);
             container.start();
         } catch (SlickException e) {
