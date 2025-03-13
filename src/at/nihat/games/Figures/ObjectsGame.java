@@ -2,8 +2,13 @@ package at.nihat.games.Figures;
 
 import org.newdawn.slick.*;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class ObjectsGame extends BasicGame {
-    private Rectangle rectangle;
+    private List<Rectangle> rectangles;
+    //private Circle circle;
     private int scrWidth = 800, scrHeight = 600;
 
     public ObjectsGame(String title) {
@@ -12,17 +17,30 @@ public class ObjectsGame extends BasicGame {
 
     @Override
     public void init(GameContainer gameContainer) throws SlickException {
-        this.rectangle = new Rectangle(100, 100, 5);
+        this.rectangles = new ArrayList<>();
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            Rectangle rectangle = new Rectangle(random.nextInt(600), random.nextInt(600), random.nextInt(50));
+            rectangles.add(rectangle);
+        }
+
+        //this.circle = new Circle(50, 50, 5);
     }
 
     @Override
     public void update(GameContainer gameContainer, int delta) throws SlickException {
-        this.rectangle.update(delta);
+        for (Rectangle rectangle:this.rectangles){
+            rectangle.update(delta);
+        }
+        //this.circle.update(delta);
     }
 
     @Override
     public void render(GameContainer gameContainer, Graphics graphics) throws SlickException {
-        this.rectangle.render(graphics);
+        for (Rectangle rectangle:this.rectangles){
+            rectangle.render(graphics);
+        }
+        //this.circle.render(graphics);
         graphics.drawString("MY GAME!", (float) (scrWidth - graphics.getFont().getWidth("MY GAME!")) / 2, 50);
     }
 
