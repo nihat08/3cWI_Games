@@ -1,35 +1,35 @@
 package at.nihat.games.Figures;
 
+import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
+
+import java.util.Random;
 
 public class Circle {
     private float x;
     private float y;
     private float speed;
-    private float cx, cy;
+    private int diameter;
 
-    public Circle(float x, float y, float speed) {
-        this.x = x;
-        this.y = y;
-        this.speed = speed;
+    public Circle(){
+        Random random = new Random();
+        this.x = random.nextInt(800);
+        this.y = random.nextInt(600);
+        this.speed = random.nextInt(40) + 10;
+        this.diameter = random.nextInt(20) + 20;
 
-        this.cx = Math.random() > 0.5 ? 1 : -1;
-        this.cy = Math.random() > 0.5 ? 1 : -1;
     }
 
     public void render(Graphics graphics) {
-        graphics.drawOval(this.x, this.y, 50, 50);
+        graphics.drawOval(this.x, this.y, this.diameter, this.diameter);
+        graphics.setColor(new Color(144, 224, 239));
+
     }
 
     public void update(int delta) {
-        this.x += cx * (float) delta /this.speed;
-        this.y += cy * (float) delta / this.speed;
-
-        if (this.x <= 0 || this.x > 800){
-            cx *= -1;
-        }
-        if (this.y <= 0 || this.y > 600){
-            cy *= -1;
+        this.y += (float)delta/this.speed;
+        if (this.y>600){
+            this.y=0;
         }
     }
 }

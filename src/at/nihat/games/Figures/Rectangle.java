@@ -1,5 +1,6 @@
 package at.nihat.games.Figures;
 
+import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
 public class Rectangle {
@@ -19,6 +20,8 @@ public class Rectangle {
 
     public void render(Graphics graphics) {
         graphics.drawRect(this.x, this.y, 50, 50);
+        graphics.setColor(new Color(144, 224, 239));
+
     }
 
     public void update(int delta) {
