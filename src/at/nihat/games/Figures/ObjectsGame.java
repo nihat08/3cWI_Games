@@ -53,7 +53,7 @@ public class ObjectsGame extends BasicGame {
             rectangle.render(graphics);
         }
         //this.circle.render(graphics);
-        graphics.drawString("MY GAME!", (float) (scrWidth - graphics.getFont().getWidth("MY GAME!")) / 2, 50);
+        graphics.drawString("!MY GAME!", (float) (scrWidth - graphics.getFont().getWidth("MY GAME!")) / 2, 50);
 
         for (Circle circle: this.circles){
             circle.render(graphics);
@@ -72,3 +72,4 @@ public class ObjectsGame extends BasicGame {
         }
     }
 }
+
