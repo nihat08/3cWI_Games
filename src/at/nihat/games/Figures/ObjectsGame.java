@@ -3,13 +3,11 @@ package at.nihat.games.Figures;
 import org.newdawn.slick.*;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
 public class ObjectsGame extends BasicGame {
-    private List<Rectangle> rectangles;
-    private List<Circle> circles;
+    private List<Actor> actors;
     //private Circle circle;
     private int scrWidth = 800, scrHeight = 600;
 
@@ -19,19 +17,22 @@ public class ObjectsGame extends BasicGame {
 
     @Override
     public void init(GameContainer gameContainer) throws SlickException {
-        this.rectangles = new ArrayList<>();
-        this.circles = new LinkedList<>();
+        this.actors = new ArrayList<>();
 
         Random random = new Random();
         for (int i = 0; i < 10; i++) {
             Rectangle rectangle = new Rectangle(random.nextInt(600), random.nextInt(600), random.nextInt(50));
-            rectangles.add(rectangle);
+            actors.add(rectangle);
         }
         Random random1 = new Random();
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 30; i++) {
             Circle circle = new Circle();
-            this.circles.add(circle);
-            
+            this.actors.add(circle);
+        }
+        for (int i = 0; i < 10; i++) {
+            Ellipse ellipse = new Ellipse(random.nextInt(800), random.nextInt(600), random.nextInt(50));
+            this.actors.add(ellipse);
+
         }
     }
 
@@ -39,25 +40,21 @@ public class ObjectsGame extends BasicGame {
 
     @Override
     public void update(GameContainer gameContainer, int delta) throws SlickException {
-        for (Rectangle rectangle:this.rectangles){
-            rectangle.update(delta);
+        for (Actor actor:this.actors){
+            actor.update(delta);
         }
-        for (Circle circle: this.circles){
-            circle.update(delta);
-        }
+
     }
 
     @Override
     public void render(GameContainer gameContainer, Graphics graphics) throws SlickException {
-        for (Rectangle rectangle:this.rectangles){
-            rectangle.render(graphics);
+        for (Actor actor :this.actors){
+            actor.render(graphics);
         }
         //this.circle.render(graphics);
         graphics.drawString("!MY GAME!", (float) (scrWidth - graphics.getFont().getWidth("MY GAME!")) / 2, 50);
 
-        for (Circle circle: this.circles){
-            circle.render(graphics);
-        }
+
         graphics.setColor(new Color(3, 4, 94));
 
     }

@@ -3,7 +3,7 @@ package at.nihat.games.Figures;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
-public class Rectangle {
+public class Rectangle implements Actor{
     private float x, y;
     private float speed;
     private float rx, ry;
