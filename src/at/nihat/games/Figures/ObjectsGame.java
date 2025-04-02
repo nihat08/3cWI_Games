@@ -24,16 +24,15 @@ public class ObjectsGame extends BasicGame {
             Rectangle rectangle = new Rectangle(random.nextInt(600), random.nextInt(600), random.nextInt(50));
             actors.add(rectangle);
         }
-        Random random1 = new Random();
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 10; i++) {
             Circle circle = new Circle();
             this.actors.add(circle);
         }
-        for (int i = 0; i < 10; i++) {
-            Ellipse ellipse = new Ellipse(random.nextInt(800), random.nextInt(600), random.nextInt(50));
+        for (int i = 0; i < 5; i++) {
+            Ellipse ellipse = new Ellipse(random.nextInt(800), random.nextInt(600), 1 + random.nextInt(50), false);
             this.actors.add(ellipse);
-
         }
+
     }
 
     

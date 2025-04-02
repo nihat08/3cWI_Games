@@ -5,11 +5,14 @@ import org.newdawn.slick.Graphics;
 public class Ellipse implements Actor{
     private float x,y;
     private float speed;
+    private int direction;
 
-    public Ellipse(float x, float y, float speed) {
+    public Ellipse(float x, float y, float speed, boolean TrueOrFalse) {
         this.x = x;
         this.y = y;
         this.speed = speed;
+        this.direction = TrueOrFalse ? 1 : -1;
+
     }
 
     @Override
@@ -19,7 +22,7 @@ public class Ellipse implements Actor{
 
     @Override
     public void update(int delta) {
-        this.x += (float)delta/this.speed;
+        this.x += direction * (float) delta / this.speed;
         if (this.x>800){
             this.x=0;
         }
