@@ -1,10 +1,10 @@
-package at.nihat.games.snowworld;
+package at.nihat.games.snowworldtest;
 
 import org.newdawn.slick.Graphics;
 
 import java.util.Random;
 
-public class Snowflake implements Actor{
+public class Snowflake0 implements Actoro {
     public enum SIZE {BIG, SMALL, MEDIUM};
     private float x,y;
     private int size;
@@ -37,3 +37,4 @@ public class Snowflake implements Actor{
 
     }
 }
+

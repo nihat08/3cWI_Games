@@ -1,4 +1,4 @@
-package at.nihat.games.snowworld;
+package at.nihat.games.snowworldtest;
 
 import at.nihat.games.Figures.ObjectsGame;
 import org.newdawn.slick.*;
