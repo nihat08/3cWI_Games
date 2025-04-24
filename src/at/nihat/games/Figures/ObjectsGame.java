@@ -1,5 +1,6 @@
 package at.nihat.games.Figures;
 
+import at.nihat.games.image.Manuellsen;
 import org.newdawn.slick.*;
 
 import java.util.ArrayList;
@@ -32,6 +33,9 @@ public class ObjectsGame extends BasicGame {
             Ellipse ellipse = new Ellipse(random.nextInt(800), random.nextInt(600), 1 + random.nextInt(50), true);
             this.actors.add(ellipse);
         }
+
+        Manuellsen manuellsen = new Manuellsen();
+        this.actors.add(manuellsen);
 
     }
 

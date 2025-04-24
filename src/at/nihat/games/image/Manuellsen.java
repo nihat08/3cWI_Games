@@ -1,36 +1,34 @@
 package at.nihat.games.image;
 
 import at.nihat.games.Figures.Actor;
-import at.nihat.games.Figures.ObjectsGame;
 import org.newdawn.slick.*;
 
-public class Manuellsen extends BasicGame implements Actor {
+public class Manuellsen implements Actor {
     private Image manuellsenImg;
+    private float x,y;
 
-    public Manuellsen() {
-        super("Manuellsen Game");
+
+    public Manuellsen() throws SlickException{
+        Image tmp = new Image("testdata/manu.jpg");
+        this.manuellsenImg = tmp.getScaledCopy(100, 100);
+        this.x = 100;
+        this.y = 100;
+    }
+
+
+    @Override
+    public void render(Graphics graphics) {
+        manuellsenImg.draw(this.x,this.y);
     }
 
     @Override
-    public void init(GameContainer container) throws SlickException {
-        this.manuellsenImg = new Image("testdata/manu.jpg");
-        Image test = manuellsenImg.getSubImage(50, 50, 50, 50);
-        System.out.println(test.getColor(49, 49)); // Index beachten!
-    }
-
-    @Override
-    public void render(GameContainer container, Graphics g) throws SlickException {
-        manuellsenImg.draw(100, 100);
-    }
-
-    @Override
-    public void update(GameContainer container, int delta) throws SlickException {
-        // Game logic here
+    public void update(int render) {
+        this.x++;
     }
 
     public static void main(String[] argv) {
         try {
-            AppGameContainer container = new AppGameContainer(new Manuellsen());
+            AppGameContainer container = new AppGameContainer((Game) new Manuellsen());
             container.setDisplayMode(800, 600, false);
             container.start();
         } catch (SlickException e) {
@@ -38,13 +36,4 @@ public class Manuellsen extends BasicGame implements Actor {
         }
     }
 
-    @Override
-    public void render(Graphics graphics) {
-
-    }
-
-    @Override
-    public void update(int render) {
-
-    }
 }
