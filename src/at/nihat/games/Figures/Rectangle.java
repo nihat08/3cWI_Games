@@ -1,6 +1,7 @@
 package at.nihat.games.Figures;
 
 import org.newdawn.slick.Color;
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
 public class Rectangle implements Actor{
@@ -24,7 +25,7 @@ public class Rectangle implements Actor{
 
     }
 
-    public void update(int delta) {
+    public void update(GameContainer gameContainer, int delta) {
         // Bewegung in X- und Y-Richtung
         this.x += rx * (float) delta / this.speed;
         this.y += ry * (float) delta / this.speed;

@@ -22,8 +22,18 @@ public class Manuellsen implements Actor {
     }
 
     @Override
-    public void update(int render) {
-        this.x++;
+    public void update(GameContainer gameContainer, int delta) {
+        if (gameContainer.getInput().isKeyDown(Input.KEY_RIGHT)){
+            this.x++;}
+        if (gameContainer.getInput().isKeyDown(Input.KEY_LEFT)){
+            this.x--;}
+        if (gameContainer.getInput().isKeyDown(Input.KEY_UP)){
+            this.y--;}
+        if (gameContainer.getInput().isKeyDown(Input.KEY_DOWN)){
+            this.y++;}
+
+
+
     }
 
     public static void main(String[] argv) {

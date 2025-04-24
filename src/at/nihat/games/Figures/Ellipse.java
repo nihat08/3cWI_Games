@@ -1,5 +1,6 @@
 package at.nihat.games.Figures;
 
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
 public class Ellipse implements Actor{
@@ -26,7 +27,7 @@ public class Ellipse implements Actor{
     }
 
     @Override
-    public void update(int delta) {
+    public void update(GameContainer gameContainer, int delta) {
         /*this.x += direction * (float) delta / this.speed;
         if (this.x>800){
             this.x=0;

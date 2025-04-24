@@ -44,7 +44,7 @@ public class ObjectsGame extends BasicGame {
     @Override
     public void update(GameContainer gameContainer, int delta) throws SlickException {
         for (Actor actor:this.actors){
-            actor.update(delta);
+            actor.update(gameContainer,delta);
         }
 
     }
@@ -60,6 +60,11 @@ public class ObjectsGame extends BasicGame {
 
         graphics.setColor(new Color(3, 4, 94));
 
+    }
+
+    @Override
+    public void keyPressed(int key, char c) {
+        System.out.println(key);
     }
 
     public static void main(String[] argv) {

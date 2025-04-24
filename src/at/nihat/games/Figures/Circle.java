@@ -1,6 +1,7 @@
 package at.nihat.games.Figures;
 
 import org.newdawn.slick.Color;
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
 import java.util.Random;
@@ -26,7 +27,7 @@ public class Circle implements Actor{
 
     }
 
-    public void update(int delta) {
+    public void update(GameContainer gameContainer, int delta) {
         this.diameter += 0.05f * delta;
         this.y += (float)delta/this.speed;
         if (this.y>600){
