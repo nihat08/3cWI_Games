@@ -3,7 +3,6 @@ package at.nihat.games.BreakoutGame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
-import java.util.Random;
 
 public class Ball implements BGameActor{
     private float x,y;
@@ -35,6 +34,9 @@ public class Ball implements BGameActor{
         }
         if (y<=0){
             dy*=-1;
+        }
+        if (y>=gameContainer.getHeight()-dia){
+            System.out.println("Game Over!");
         }
     }
     public float getX() { return x; }
